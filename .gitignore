@@ -1,0 +1,10 @@
+roms
+.cache
+.clang-format
+.clangd
+.DS_Store
+compile_commands.json
+gameboy-doctor
+ncurses_testing
+gb
+*.gb

@@ -1,0 +1,512 @@
+0x00,NOP,1,4,-,-,-,-
+0x01,LD BC n16,3,12,-,-,-,-
+0x02,LD BC A,1,8,-,-,-,-
+0x03,INC BC,1,8,-,-,-,-
+0x04,INC B,1,4,Z,0,H,-
+0x05,DEC B,1,4,Z,1,H,-
+0x06,LD B n8,2,8,-,-,-,-
+0x07,RLCA,1,4,0,0,0,C
+0x08,LD a16 SP,3,20,-,-,-,-
+0x09,ADD HL BC,1,8,-,0,H,C
+0x0A,LD A BC,1,8,-,-,-,-
+0x0B,DEC BC,1,8,-,-,-,-
+0x0C,INC C,1,4,Z,0,H,-
+0x0D,DEC C,1,4,Z,1,H,-
+0x0E,LD C n8,2,8,-,-,-,-
+0x0F,RRCA,1,4,0,0,0,C
+0x10,STOP n8,2,4,-,-,-,-
+0x11,LD DE n16,3,12,-,-,-,-
+0x12,LD DE A,1,8,-,-,-,-
+0x13,INC DE,1,8,-,-,-,-
+0x14,INC D,1,4,Z,0,H,-
+0x15,DEC D,1,4,Z,1,H,-
+0x16,LD D n8,2,8,-,-,-,-
+0x17,RLA,1,4,0,0,0,C
+0x18,JR e8,2,12,-,-,-,-
+0x19,ADD HL DE,1,8,-,0,H,C
+0x1A,LD A DE,1,8,-,-,-,-
+0x1B,DEC DE,1,8,-,-,-,-
+0x1C,INC E,1,4,Z,0,H,-
+0x1D,DEC E,1,4,Z,1,H,-
+0x1E,LD E n8,2,8,-,-,-,-
+0x1F,RRA,1,4,0,0,0,C
+0x20,JR NZ e8,2,12,-,-,-,-
+0x21,LD HL n16,3,12,-,-,-,-
+0x22,LD HL A,1,8,-,-,-,-
+0x23,INC HL,1,8,-,-,-,-
+0x24,INC H,1,4,Z,0,H,-
+0x25,DEC H,1,4,Z,1,H,-
+0x26,LD H n8,2,8,-,-,-,-
+0x27,DAA,1,4,Z,-,0,C
+0x28,JR Z e8,2,12,-,-,-,-
+0x29,ADD HL HL,1,8,-,0,H,C
+0x2A,LD A HL,1,8,-,-,-,-
+0x2B,DEC HL,1,8,-,-,-,-
+0x2C,INC L,1,4,Z,0,H,-
+0x2D,DEC L,1,4,Z,1,H,-
+0x2E,LD L n8,2,8,-,-,-,-
+0x2F,CPL,1,4,-,1,1,-
+0x30,JR NC e8,2,12,-,-,-,-
+0x31,LD SP n16,3,12,-,-,-,-
+0x32,LD HL A,1,8,-,-,-,-
+0x33,INC SP,1,8,-,-,-,-
+0x34,INC HL,1,12,Z,0,H,-
+0x35,DEC HL,1,12,Z,1,H,-
+0x36,LD HL n8,2,12,-,-,-,-
+0x37,SCF,1,4,-,0,0,1
+0x38,JR C e8,2,12,-,-,-,-
+0x39,ADD HL SP,1,8,-,0,H,C
+0x3A,LD A HL,1,8,-,-,-,-
+0x3B,DEC SP,1,8,-,-,-,-
+0x3C,INC A,1,4,Z,0,H,-
+0x3D,DEC A,1,4,Z,1,H,-
+0x3E,LD A n8,2,8,-,-,-,-
+0x3F,CCF,1,4,-,0,0,C
+0x40,LD B B,1,4,-,-,-,-
+0x41,LD B C,1,4,-,-,-,-
+0x42,LD B D,1,4,-,-,-,-
+0x43,LD B E,1,4,-,-,-,-
+0x44,LD B H,1,4,-,-,-,-
+0x45,LD B L,1,4,-,-,-,-
+0x46,LD B HL,1,8,-,-,-,-
+0x47,LD B A,1,4,-,-,-,-
+0x48,LD C B,1,4,-,-,-,-
+0x49,LD C C,1,4,-,-,-,-
+0x4A,LD C D,1,4,-,-,-,-
+0x4B,LD C E,1,4,-,-,-,-
+0x4C,LD C H,1,4,-,-,-,-
+0x4D,LD C L,1,4,-,-,-,-
+0x4E,LD C HL,1,8,-,-,-,-
+0x4F,LD C A,1,4,-,-,-,-
+0x50,LD D B,1,4,-,-,-,-
+0x51,LD D C,1,4,-,-,-,-
+0x52,LD D D,1,4,-,-,-,-
+0x53,LD D E,1,4,-,-,-,-
+0x54,LD D H,1,4,-,-,-,-
+0x55,LD D L,1,4,-,-,-,-
+0x56,LD D HL,1,8,-,-,-,-
+0x57,LD D A,1,4,-,-,-,-
+0x58,LD E B,1,4,-,-,-,-
+0x59,LD E C,1,4,-,-,-,-
+0x5A,LD E D,1,4,-,-,-,-
+0x5B,LD E E,1,4,-,-,-,-
+0x5C,LD E H,1,4,-,-,-,-
+0x5D,LD E L,1,4,-,-,-,-
+0x5E,LD E HL,1,8,-,-,-,-
+0x5F,LD E A,1,4,-,-,-,-
+0x60,LD H B,1,4,-,-,-,-
+0x61,LD H C,1,4,-,-,-,-
+0x62,LD H D,1,4,-,-,-,-
+0x63,LD H E,1,4,-,-,-,-
+0x64,LD H H,1,4,-,-,-,-
+0x65,LD H L,1,4,-,-,-,-
+0x66,LD H HL,1,8,-,-,-,-
+0x67,LD H A,1,4,-,-,-,-
+0x68,LD L B,1,4,-,-,-,-
+0x69,LD L C,1,4,-,-,-,-
+0x6A,LD L D,1,4,-,-,-,-
+0x6B,LD L E,1,4,-,-,-,-
+0x6C,LD L H,1,4,-,-,-,-
+0x6D,LD L L,1,4,-,-,-,-
+0x6E,LD L HL,1,8,-,-,-,-
+0x6F,LD L A,1,4,-,-,-,-
+0x70,LD HL B,1,8,-,-,-,-
+0x71,LD HL C,1,8,-,-,-,-
+0x72,LD HL D,1,8,-,-,-,-
+0x73,LD HL E,1,8,-,-,-,-
+0x74,LD HL H,1,8,-,-,-,-
+0x75,LD HL L,1,8,-,-,-,-
+0x76,HALT,1,4,-,-,-,-
+0x77,LD HL A,1,8,-,-,-,-
+0x78,LD A B,1,4,-,-,-,-
+0x79,LD A C,1,4,-,-,-,-
+0x7A,LD A D,1,4,-,-,-,-
+0x7B,LD A E,1,4,-,-,-,-
+0x7C,LD A H,1,4,-,-,-,-
+0x7D,LD A L,1,4,-,-,-,-
+0x7E,LD A HL,1,8,-,-,-,-
+0x7F,LD A A,1,4,-,-,-,-
+0x80,ADD A B,1,4,Z,0,H,C
+0x81,ADD A C,1,4,Z,0,H,C
+0x82,ADD A D,1,4,Z,0,H,C
+0x83,ADD A E,1,4,Z,0,H,C
+0x84,ADD A H,1,4,Z,0,H,C
+0x85,ADD A L,1,4,Z,0,H,C
+0x86,ADD A HL,1,8,Z,0,H,C
+0x87,ADD A A,1,4,Z,0,H,C
+0x88,ADC A B,1,4,Z,0,H,C
+0x89,ADC A C,1,4,Z,0,H,C
+0x8A,ADC A D,1,4,Z,0,H,C
+0x8B,ADC A E,1,4,Z,0,H,C
+0x8C,ADC A H,1,4,Z,0,H,C
+0x8D,ADC A L,1,4,Z,0,H,C
+0x8E,ADC A HL,1,8,Z,0,H,C
+0x8F,ADC A A,1,4,Z,0,H,C
+0x90,SUB A B,1,4,Z,1,H,C
+0x91,SUB A C,1,4,Z,1,H,C
+0x92,SUB A D,1,4,Z,1,H,C
+0x93,SUB A E,1,4,Z,1,H,C
+0x94,SUB A H,1,4,Z,1,H,C
+0x95,SUB A L,1,4,Z,1,H,C
+0x96,SUB A HL,1,8,Z,1,H,C
+0x97,SUB A A,1,4,1,1,0,0
+0x98,SBC A B,1,4,Z,1,H,C
+0x99,SBC A C,1,4,Z,1,H,C
+0x9A,SBC A D,1,4,Z,1,H,C
+0x9B,SBC A E,1,4,Z,1,H,C
+0x9C,SBC A H,1,4,Z,1,H,C
+0x9D,SBC A L,1,4,Z,1,H,C
+0x9E,SBC A HL,1,8,Z,1,H,C
+0x9F,SBC A A,1,4,Z,1,H,-
+0xA0,AND A B,1,4,Z,0,1,0
+0xA1,AND A C,1,4,Z,0,1,0
+0xA2,AND A D,1,4,Z,0,1,0
+0xA3,AND A E,1,4,Z,0,1,0
+0xA4,AND A H,1,4,Z,0,1,0
+0xA5,AND A L,1,4,Z,0,1,0
+0xA6,AND A HL,1,8,Z,0,1,0
+0xA7,AND A A,1,4,Z,0,1,0
+0xA8,XOR A B,1,4,Z,0,0,0
+0xA9,XOR A C,1,4,Z,0,0,0
+0xAA,XOR A D,1,4,Z,0,0,0
+0xAB,XOR A E,1,4,Z,0,0,0
+0xAC,XOR A H,1,4,Z,0,0,0
+0xAD,XOR A L,1,4,Z,0,0,0
+0xAE,XOR A HL,1,8,Z,0,0,0
+0xAF,XOR A A,1,4,1,0,0,0
+0xB0,OR A B,1,4,Z,0,0,0
+0xB1,OR A C,1,4,Z,0,0,0
+0xB2,OR A D,1,4,Z,0,0,0
+0xB3,OR A E,1,4,Z,0,0,0
+0xB4,OR A H,1,4,Z,0,0,0
+0xB5,OR A L,1,4,Z,0,0,0
+0xB6,OR A HL,1,8,Z,0,0,0
+0xB7,OR A A,1,4,Z,0,0,0
+0xB8,CP A B,1,4,Z,1,H,C
+0xB9,CP A C,1,4,Z,1,H,C
+0xBA,CP A D,1,4,Z,1,H,C
+0xBB,CP A E,1,4,Z,1,H,C
+0xBC,CP A H,1,4,Z,1,H,C
+0xBD,CP A L,1,4,Z,1,H,C
+0xBE,CP A HL,1,8,Z,1,H,C
+0xBF,CP A A,1,4,1,1,0,0
+0xC0,RET NZ,1,20,-,-,-,-
+0xC1,POP BC,1,12,-,-,-,-
+0xC2,JP NZ a16,3,16,-,-,-,-
+0xC3,JP a16,3,16,-,-,-,-
+0xC4,CALL NZ a16,3,24,-,-,-,-
+0xC5,PUSH BC,1,16,-,-,-,-
+0xC6,ADD A n8,2,8,Z,0,H,C
+0xC7,RST $00,1,16,-,-,-,-
+0xC8,RET Z,1,20,-,-,-,-
+0xC9,RET,1,16,-,-,-,-
+0xCA,JP Z a16,3,16,-,-,-,-
+0xCB,PREFIX,1,4,-,-,-,-
+0xCC,CALL Z a16,3,24,-,-,-,-
+0xCD,CALL a16,3,24,-,-,-,-
+0xCE,ADC A n8,2,8,Z,0,H,C
+0xCF,RST $08,1,16,-,-,-,-
+0xD0,RET NC,1,20,-,-,-,-
+0xD1,POP DE,1,12,-,-,-,-
+0xD2,JP NC a16,3,16,-,-,-,-
+0xD3,ILLEGAL_D3,1,4,-,-,-,-
+0xD4,CALL NC a16,3,24,-,-,-,-
+0xD5,PUSH DE,1,16,-,-,-,-
+0xD6,SUB A n8,2,8,Z,1,H,C
+0xD7,RST $10,1,16,-,-,-,-
+0xD8,RET C,1,20,-,-,-,-
+0xD9,RETI,1,16,-,-,-,-
+0xDA,JP C a16,3,16,-,-,-,-
+0xDB,ILLEGAL_DB,1,4,-,-,-,-
+0xDC,CALL C a16,3,24,-,-,-,-
+0xDD,ILLEGAL_DD,1,4,-,-,-,-
+0xDE,SBC A n8,2,8,Z,1,H,C
+0xDF,RST $18,1,16,-,-,-,-
+0xE0,LDH a8 A,2,12,-,-,-,-
+0xE1,POP HL,1,12,-,-,-,-
+0xE2,LD C A,1,8,-,-,-,-
+0xE3,ILLEGAL_E3,1,4,-,-,-,-
+0xE4,ILLEGAL_E4,1,4,-,-,-,-
+0xE5,PUSH HL,1,16,-,-,-,-
+0xE6,AND A n8,2,8,Z,0,1,0
+0xE7,RST $20,1,16,-,-,-,-
+0xE8,ADD SP e8,2,16,0,0,H,C
+0xE9,JP HL,1,4,-,-,-,-
+0xEA,LD a16 A,3,16,-,-,-,-
+0xEB,ILLEGAL_EB,1,4,-,-,-,-
+0xEC,ILLEGAL_EC,1,4,-,-,-,-
+0xED,ILLEGAL_ED,1,4,-,-,-,-
+0xEE,XOR A n8,2,8,Z,0,0,0
+0xEF,RST $28,1,16,-,-,-,-
+0xF0,LDH A a8,2,12,-,-,-,-
+0xF1,POP AF,1,12,Z,N,H,C
+0xF2,LD A C,1,8,-,-,-,-
+0xF3,DI,1,4,-,-,-,-
+0xF4,ILLEGAL_F4,1,4,-,-,-,-
+0xF5,PUSH AF,1,16,-,-,-,-
+0xF6,OR A n8,2,8,Z,0,0,0
+0xF7,RST $30,1,16,-,-,-,-
+0xF8,LD HL SP e8,2,12,0,0,H,C
+0xF9,LD SP HL,1,8,-,-,-,-
+0xFA,LD A a16,3,16,-,-,-,-
+0xFB,EI,1,4,-,-,-,-
+0xFC,ILLEGAL_FC,1,4,-,-,-,-
+0xFD,ILLEGAL_FD,1,4,-,-,-,-
+0xFE,CP A n8,2,8,Z,1,H,C
+0xFF,RST $38,1,16,-,-,-,-
+0x00,CB RLC B,2,8,Z,0,0,C
+0x01,CB RLC C,2,8,Z,0,0,C
+0x02,CB RLC D,2,8,Z,0,0,C
+0x03,CB RLC E,2,8,Z,0,0,C
+0x04,CB RLC H,2,8,Z,0,0,C
+0x05,CB RLC L,2,8,Z,0,0,C
+0x06,CB RLC HL,2,16,Z,0,0,C
+0x07,CB RLC A,2,8,Z,0,0,C
+0x08,CB RRC B,2,8,Z,0,0,C
+0x09,CB RRC C,2,8,Z,0,0,C
+0x0A,CB RRC D,2,8,Z,0,0,C
+0x0B,CB RRC E,2,8,Z,0,0,C
+0x0C,CB RRC H,2,8,Z,0,0,C
+0x0D,CB RRC L,2,8,Z,0,0,C
+0x0E,CB RRC HL,2,16,Z,0,0,C
+0x0F,CB RRC A,2,8,Z,0,0,C
+0x10,CB RL B,2,8,Z,0,0,C
+0x11,CB RL C,2,8,Z,0,0,C
+0x12,CB RL D,2,8,Z,0,0,C
+0x13,CB RL E,2,8,Z,0,0,C
+0x14,CB RL H,2,8,Z,0,0,C
+0x15,CB RL L,2,8,Z,0,0,C
+0x16,CB RL HL,2,16,Z,0,0,C
+0x17,CB RL A,2,8,Z,0,0,C
+0x18,CB RR B,2,8,Z,0,0,C
+0x19,CB RR C,2,8,Z,0,0,C
+0x1A,CB RR D,2,8,Z,0,0,C
+0x1B,CB RR E,2,8,Z,0,0,C
+0x1C,CB RR H,2,8,Z,0,0,C
+0x1D,CB RR L,2,8,Z,0,0,C
+0x1E,CB RR HL,2,16,Z,0,0,C
+0x1F,CB RR A,2,8,Z,0,0,C
+0x20,CB SLA B,2,8,Z,0,0,C
+0x21,CB SLA C,2,8,Z,0,0,C
+0x22,CB SLA D,2,8,Z,0,0,C
+0x23,CB SLA E,2,8,Z,0,0,C
+0x24,CB SLA H,2,8,Z,0,0,C
+0x25,CB SLA L,2,8,Z,0,0,C
+0x26,CB SLA HL,2,16,Z,0,0,C
+0x27,CB SLA A,2,8,Z,0,0,C
+0x28,CB SRA B,2,8,Z,0,0,C
+0x29,CB SRA C,2,8,Z,0,0,C
+0x2A,CB SRA D,2,8,Z,0,0,C
+0x2B,CB SRA E,2,8,Z,0,0,C
+0x2C,CB SRA H,2,8,Z,0,0,C
+0x2D,CB SRA L,2,8,Z,0,0,C
+0x2E,CB SRA HL,2,16,Z,0,0,C
+0x2F,CB SRA A,2,8,Z,0,0,C
+0x30,CB SWAP B,2,8,Z,0,0,0
+0x31,CB SWAP C,2,8,Z,0,0,0
+0x32,CB SWAP D,2,8,Z,0,0,0
+0x33,CB SWAP E,2,8,Z,0,0,0
+0x34,CB SWAP H,2,8,Z,0,0,0
+0x35,CB SWAP L,2,8,Z,0,0,0
+0x36,CB SWAP HL,2,16,Z,0,0,0
+0x37,CB SWAP A,2,8,Z,0,0,0
+0x38,CB SRL B,2,8,Z,0,0,C
+0x39,CB SRL C,2,8,Z,0,0,C
+0x3A,CB SRL D,2,8,Z,0,0,C
+0x3B,CB SRL E,2,8,Z,0,0,C
+0x3C,CB SRL H,2,8,Z,0,0,C
+0x3D,CB SRL L,2,8,Z,0,0,C
+0x3E,CB SRL HL,2,16,Z,0,0,C
+0x3F,CB SRL A,2,8,Z,0,0,C
+0x40,CB BIT 0 B,2,8,Z,0,1,-
+0x41,CB BIT 0 C,2,8,Z,0,1,-
+0x42,CB BIT 0 D,2,8,Z,0,1,-
+0x43,CB BIT 0 E,2,8,Z,0,1,-
+0x44,CB BIT 0 H,2,8,Z,0,1,-
+0x45,CB BIT 0 L,2,8,Z,0,1,-
+0x46,CB BIT 0 HL,2,12,Z,0,1,-
+0x47,CB BIT 0 A,2,8,Z,0,1,-
+0x48,CB BIT 1 B,2,8,Z,0,1,-
+0x49,CB BIT 1 C,2,8,Z,0,1,-
+0x4A,CB BIT 1 D,2,8,Z,0,1,-
+0x4B,CB BIT 1 E,2,8,Z,0,1,-
+0x4C,CB BIT 1 H,2,8,Z,0,1,-
+0x4D,CB BIT 1 L,2,8,Z,0,1,-
+0x4E,CB BIT 1 HL,2,12,Z,0,1,-
+0x4F,CB BIT 1 A,2,8,Z,0,1,-
+0x50,CB BIT 2 B,2,8,Z,0,1,-
+0x51,CB BIT 2 C,2,8,Z,0,1,-
+0x52,CB BIT 2 D,2,8,Z,0,1,-
+0x53,CB BIT 2 E,2,8,Z,0,1,-
+0x54,CB BIT 2 H,2,8,Z,0,1,-
+0x55,CB BIT 2 L,2,8,Z,0,1,-
+0x56,CB BIT 2 HL,2,12,Z,0,1,-
+0x57,CB BIT 2 A,2,8,Z,0,1,-
+0x58,CB BIT 3 B,2,8,Z,0,1,-
+0x59,CB BIT 3 C,2,8,Z,0,1,-
+0x5A,CB BIT 3 D,2,8,Z,0,1,-
+0x5B,CB BIT 3 E,2,8,Z,0,1,-
+0x5C,CB BIT 3 H,2,8,Z,0,1,-
+0x5D,CB BIT 3 L,2,8,Z,0,1,-
+0x5E,CB BIT 3 HL,2,12,Z,0,1,-
+0x5F,CB BIT 3 A,2,8,Z,0,1,-
+0x60,CB BIT 4 B,2,8,Z,0,1,-
+0x61,CB BIT 4 C,2,8,Z,0,1,-
+0x62,CB BIT 4 D,2,8,Z,0,1,-
+0x63,CB BIT 4 E,2,8,Z,0,1,-
+0x64,CB BIT 4 H,2,8,Z,0,1,-
+0x65,CB BIT 4 L,2,8,Z,0,1,-
+0x66,CB BIT 4 HL,2,12,Z,0,1,-
+0x67,CB BIT 4 A,2,8,Z,0,1,-
+0x68,CB BIT 5 B,2,8,Z,0,1,-
+0x69,CB BIT 5 C,2,8,Z,0,1,-
+0x6A,CB BIT 5 D,2,8,Z,0,1,-
+0x6B,CB BIT 5 E,2,8,Z,0,1,-
+0x6C,CB BIT 5 H,2,8,Z,0,1,-
+0x6D,CB BIT 5 L,2,8,Z,0,1,-
+0x6E,CB BIT 5 HL,2,12,Z,0,1,-
+0x6F,CB BIT 5 A,2,8,Z,0,1,-
+0x70,CB BIT 6 B,2,8,Z,0,1,-
+0x71,CB BIT 6 C,2,8,Z,0,1,-
+0x72,CB BIT 6 D,2,8,Z,0,1,-
+0x73,CB BIT 6 E,2,8,Z,0,1,-
+0x74,CB BIT 6 H,2,8,Z,0,1,-
+0x75,CB BIT 6 L,2,8,Z,0,1,-
+0x76,CB BIT 6 HL,2,12,Z,0,1,-
+0x77,CB BIT 6 A,2,8,Z,0,1,-
+0x78,CB BIT 7 B,2,8,Z,0,1,-
+0x79,CB BIT 7 C,2,8,Z,0,1,-
+0x7A,CB BIT 7 D,2,8,Z,0,1,-
+0x7B,CB BIT 7 E,2,8,Z,0,1,-
+0x7C,CB BIT 7 H,2,8,Z,0,1,-
+0x7D,CB BIT 7 L,2,8,Z,0,1,-
+0x7E,CB BIT 7 HL,2,12,Z,0,1,-
+0x7F,CB BIT 7 A,2,8,Z,0,1,-
+0x80,CB RES 0 B,2,8,-,-,-,-
+0x81,CB RES 0 C,2,8,-,-,-,-
+0x82,CB RES 0 D,2,8,-,-,-,-
+0x83,CB RES 0 E,2,8,-,-,-,-
+0x84,CB RES 0 H,2,8,-,-,-,-
+0x85,CB RES 0 L,2,8,-,-,-,-
+0x86,CB RES 0 HL,2,16,-,-,-,-
+0x87,CB RES 0 A,2,8,-,-,-,-
+0x88,CB RES 1 B,2,8,-,-,-,-
+0x89,CB RES 1 C,2,8,-,-,-,-
+0x8A,CB RES 1 D,2,8,-,-,-,-
+0x8B,CB RES 1 E,2,8,-,-,-,-
+0x8C,CB RES 1 H,2,8,-,-,-,-
+0x8D,CB RES 1 L,2,8,-,-,-,-
+0x8E,CB RES 1 HL,2,16,-,-,-,-
+0x8F,CB RES 1 A,2,8,-,-,-,-
+0x90,CB RES 2 B,2,8,-,-,-,-
+0x91,CB RES 2 C,2,8,-,-,-,-
+0x92,CB RES 2 D,2,8,-,-,-,-
+0x93,CB RES 2 E,2,8,-,-,-,-
+0x94,CB RES 2 H,2,8,-,-,-,-
+0x95,CB RES 2 L,2,8,-,-,-,-
+0x96,CB RES 2 HL,2,16,-,-,-,-
+0x97,CB RES 2 A,2,8,-,-,-,-
+0x98,CB RES 3 B,2,8,-,-,-,-
+0x99,CB RES 3 C,2,8,-,-,-,-
+0x9A,CB RES 3 D,2,8,-,-,-,-
+0x9B,CB RES 3 E,2,8,-,-,-,-
+0x9C,CB RES 3 H,2,8,-,-,-,-
+0x9D,CB RES 3 L,2,8,-,-,-,-
+0x9E,CB RES 3 HL,2,16,-,-,-,-
+0x9F,CB RES 3 A,2,8,-,-,-,-
+0xA0,CB RES 4 B,2,8,-,-,-,-
+0xA1,CB RES 4 C,2,8,-,-,-,-
+0xA2,CB RES 4 D,2,8,-,-,-,-
+0xA3,CB RES 4 E,2,8,-,-,-,-
+0xA4,CB RES 4 H,2,8,-,-,-,-
+0xA5,CB RES 4 L,2,8,-,-,-,-
+0xA6,CB RES 4 HL,2,16,-,-,-,-
+0xA7,CB RES 4 A,2,8,-,-,-,-
+0xA8,CB RES 5 B,2,8,-,-,-,-
+0xA9,CB RES 5 C,2,8,-,-,-,-
+0xAA,CB RES 5 D,2,8,-,-,-,-
+0xAB,CB RES 5 E,2,8,-,-,-,-
+0xAC,CB RES 5 H,2,8,-,-,-,-
+0xAD,CB RES 5 L,2,8,-,-,-,-
+0xAE,CB RES 5 HL,2,16,-,-,-,-
+0xAF,CB RES 5 A,2,8,-,-,-,-
+0xB0,CB RES 6 B,2,8,-,-,-,-
+0xB1,CB RES 6 C,2,8,-,-,-,-
+0xB2,CB RES 6 D,2,8,-,-,-,-
+0xB3,CB RES 6 E,2,8,-,-,-,-
+0xB4,CB RES 6 H,2,8,-,-,-,-
+0xB5,CB RES 6 L,2,8,-,-,-,-
+0xB6,CB RES 6 HL,2,16,-,-,-,-
+0xB7,CB RES 6 A,2,8,-,-,-,-
+0xB8,CB RES 7 B,2,8,-,-,-,-
+0xB9,CB RES 7 C,2,8,-,-,-,-
+0xBA,CB RES 7 D,2,8,-,-,-,-
+0xBB,CB RES 7 E,2,8,-,-,-,-
+0xBC,CB RES 7 H,2,8,-,-,-,-
+0xBD,CB RES 7 L,2,8,-,-,-,-
+0xBE,CB RES 7 HL,2,16,-,-,-,-
+0xBF,CB RES 7 A,2,8,-,-,-,-
+0xC0,CB SET 0 B,2,8,-,-,-,-
+0xC1,CB SET 0 C,2,8,-,-,-,-
+0xC2,CB SET 0 D,2,8,-,-,-,-
+0xC3,CB SET 0 E,2,8,-,-,-,-
+0xC4,CB SET 0 H,2,8,-,-,-,-
+0xC5,CB SET 0 L,2,8,-,-,-,-
+0xC6,CB SET 0 HL,2,16,-,-,-,-
+0xC7,CB SET 0 A,2,8,-,-,-,-
+0xC8,CB SET 1 B,2,8,-,-,-,-
+0xC9,CB SET 1 C,2,8,-,-,-,-
+0xCA,CB SET 1 D,2,8,-,-,-,-
+0xCB,CB SET 1 E,2,8,-,-,-,-
+0xCC,CB SET 1 H,2,8,-,-,-,-
+0xCD,CB SET 1 L,2,8,-,-,-,-
+0xCE,CB SET 1 HL,2,16,-,-,-,-
+0xCF,CB SET 1 A,2,8,-,-,-,-
+0xD0,CB SET 2 B,2,8,-,-,-,-
+0xD1,CB SET 2 C,2,8,-,-,-,-
+0xD2,CB SET 2 D,2,8,-,-,-,-
+0xD3,CB SET 2 E,2,8,-,-,-,-
+0xD4,CB SET 2 H,2,8,-,-,-,-
+0xD5,CB SET 2 L,2,8,-,-,-,-
+0xD6,CB SET 2 HL,2,16,-,-,-,-
+0xD7,CB SET 2 A,2,8,-,-,-,-
+0xD8,CB SET 3 B,2,8,-,-,-,-
+0xD9,CB SET 3 C,2,8,-,-,-,-
+0xDA,CB SET 3 D,2,8,-,-,-,-
+0xDB,CB SET 3 E,2,8,-,-,-,-
+0xDC,CB SET 3 H,2,8,-,-,-,-
+0xDD,CB SET 3 L,2,8,-,-,-,-
+0xDE,CB SET 3 HL,2,16,-,-,-,-
+0xDF,CB SET 3 A,2,8,-,-,-,-
+0xE0,CB SET 4 B,2,8,-,-,-,-
+0xE1,CB SET 4 C,2,8,-,-,-,-
+0xE2,CB SET 4 D,2,8,-,-,-,-
+0xE3,CB SET 4 E,2,8,-,-,-,-
+0xE4,CB SET 4 H,2,8,-,-,-,-
+0xE5,CB SET 4 L,2,8,-,-,-,-
+0xE6,CB SET 4 HL,2,16,-,-,-,-
+0xE7,CB SET 4 A,2,8,-,-,-,-
+0xE8,CB SET 5 B,2,8,-,-,-,-
+0xE9,CB SET 5 C,2,8,-,-,-,-
+0xEA,CB SET 5 D,2,8,-,-,-,-
+0xEB,CB SET 5 E,2,8,-,-,-,-
+0xEC,CB SET 5 H,2,8,-,-,-,-
+0xED,CB SET 5 L,2,8,-,-,-,-
+0xEE,CB SET 5 HL,2,16,-,-,-,-
+0xEF,CB SET 5 A,2,8,-,-,-,-
+0xF0,CB SET 6 B,2,8,-,-,-,-
+0xF1,CB SET 6 C,2,8,-,-,-,-
+0xF2,CB SET 6 D,2,8,-,-,-,-
+0xF3,CB SET 6 E,2,8,-,-,-,-
+0xF4,CB SET 6 H,2,8,-,-,-,-
+0xF5,CB SET 6 L,2,8,-,-,-,-
+0xF6,CB SET 6 HL,2,16,-,-,-,-
+0xF7,CB SET 6 A,2,8,-,-,-,-
+0xF8,CB SET 7 B,2,8,-,-,-,-
+0xF9,CB SET 7 C,2,8,-,-,-,-
+0xFA,CB SET 7 D,2,8,-,-,-,-
+0xFB,CB SET 7 E,2,8,-,-,-,-
+0xFC,CB SET 7 H,2,8,-,-,-,-
+0xFD,CB SET 7 L,2,8,-,-,-,-
+0xFE,CB SET 7 HL,2,16,-,-,-,-
+0xFF,CB SET 7 A,2,8,-,-,-,-
